@@ -16,8 +16,8 @@ const CurGetWeatherDataFromApi = async () => {
     console.log(CurIpAddress);
     
     const getCurrentCountry = await axios.get(
-      `http://ip-api.com/json/${CurIpAddress}`
-    )
+      `https://ipapi.co/${CurIpAddress}/json`
+    );
     const currentCountryInfo = getCurrentCountry.data.city
     console.log(currentCountryInfo);
    
