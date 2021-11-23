@@ -1,5 +1,6 @@
 const currentWeather = document.querySelector("#currentweather");
 const cuurentWeatherIcon = document.querySelector("#cuurentWeatherIcon");
+const body = document.querySelector("body")
 
 
 
@@ -11,15 +12,15 @@ window.addEventListener("load", () => {
 const CurGetWeatherDataFromApi = async () => {    
     let ipAddress = await fetch("https://api.vatcomply.com/geolocate");
     let data = await ipAddress.json();
-    console.log(data);
+    //console.log(data);
     let CurIpAddress = data.ip
-    console.log(CurIpAddress);
+    //console.log(CurIpAddress);
     
     const getCurrentCountry = await axios.get(
       `https://ipapi.co/${CurIpAddress}/json`
     );
     const currentCountryInfo = getCurrentCountry.data.city
-    console.log(currentCountryInfo);
+    //console.log(currentCountryInfo);
    
     
 
@@ -29,11 +30,12 @@ const CurGetWeatherDataFromApi = async () => {
     const response = await axios.get(url);
     // const response = await axios(url);
     
-    console.log(response.data);
-    const {sys, weather,main } = response.data;
+    //console.log(response.data);
+    const {weather,main } = response.data;
     const iconUrl = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`;
    currentWeather.innerHTML = ` ${Math.round(
      main.temp
    )}<sup>°C</sup>`;
    cuurentWeatherIcon.src = iconUrl;
+   
 }

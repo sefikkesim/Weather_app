@@ -15,7 +15,7 @@ window.addEventListener("load", getIPAddress);
 const getIpLocation = async (ipAddress) => {
   let ipAddress1 = await fetch(`https://ipapi.co/${ipAddress}/json`);
   let data1 = await ipAddress1.json().then((data) => {
-    console.log(data);
+    //console.log(data);
     cityInfo.innerHTML = data.city;
     countryInfo.innerHTML = data.country;
    
