@@ -2,7 +2,9 @@ const form = document.querySelector(".top-banner form");
 const input = document.querySelector(".top-banner input");
 const msg = document.querySelector(".top-banner .msg");
 const list = document.querySelector(".ajax-section .cities");
-const section = document.querySelector(".ajax-section")
+const section = document.querySelector(".ajax-section");
+
+
 
 localStorage.setItem(
   "apikey",
@@ -76,7 +78,6 @@ const getWeatherDataFromApi = async () => {
 
 section.addEventListener("click",(e)=>{
     if(e.target.classList.contains("fa-solid")){
-        console.log("hee");
         e.target.parentElement.parentElement.remove()
     }
 })

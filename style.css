@@ -63,7 +63,23 @@ body {
   padding: 0 15px;
 }
 
-
+.header{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  font-size: 2rem;
+  color: gray;
+}
+h4{
+  color: #fff;
+}
+#cuurentWeatherIcon{
+  width : 20%;
+}
+#currentWeatherInfo{
+display: flex;
+justify-content: space-evenly;
+}
 /* SECTION #1
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .top-banner {
