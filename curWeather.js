@@ -73,3 +73,4 @@ const updateTime = () => {
   dateEl.textContent = currentDate.toString();
 };
 setInterval(updateTime, 1000);
+updateTime()

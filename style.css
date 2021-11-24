@@ -91,6 +91,9 @@ body {
 display: flex;
 justify-content: space-evenly;
 }
+.header-right{
+  text-align: center;
+}
 /* SECTION #1
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .top-banner {
@@ -112,7 +115,7 @@ justify-content: space-evenly;
 
 .top-banner form input {
   font-size: 2rem;
-  height: 30px;
+  height: 40px;
   padding: 5px 5px 10px;
   border-bottom: 1px solid;
 }
