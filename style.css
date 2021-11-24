@@ -75,7 +75,13 @@ body {
   font-size: 1.5rem;
   color: rgb(44, 43, 43);
 }
-h4{
+.header-center {
+  text-align: center;
+  font-size: .8rem;
+  color: #fff;
+}
+
+.header h5{
   color: #fff;
 }
 #cuurentWeatherIcon{

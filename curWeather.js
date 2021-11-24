@@ -50,3 +50,26 @@ const CurGetWeatherDataFromApi = async () => {
 //Convert a Unix timestamp to time in JavaScript
 // var s = new Date(1637780400000).toLocaleDateString("en-FI");
 // console.log(s);
+
+// Set up date and time
+
+let yearEl = document.querySelector("#year");
+let monthEl = document.querySelector("#month");
+let dateEl = document.querySelector("#date");
+let hourEl = document.querySelector("#hour");
+let minuteEl = document.querySelector("#minute");
+
+const updateTime = () => {
+  const currentTime = new Date();
+  let currentYear = currentTime.getFullYear();
+  let currentMonth = currentTime.getMonth();
+  let currentDate = currentTime.getDate();
+  let currentHour = currentTime.getHours();
+  const currentMinute = currentTime.getMinutes();
+  hourEl.textContent = currentHour.toString();
+  minuteEl.textContent = currentMinute.toString().padStart(2, "0");
+  yearEl.textContent = currentYear.toString();
+  monthEl.textContent = currentMonth.toString();
+  dateEl.textContent = currentDate.toString();
+};
+setInterval(updateTime, 1000);
