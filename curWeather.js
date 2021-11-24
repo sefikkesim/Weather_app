@@ -28,14 +28,25 @@ const CurGetWeatherDataFromApi = async () => {
   let weatherType = "metric";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${currentCountryInfo}&appid=${apikey}&units=${weatherType}`;
     const response = await axios.get(url);
-    // const response = await axios(url);
-    
-    //console.log(response.data);
+    //const response = await axios(url);
+    //const lonInfo = response.data.coord.lon;
+    //const latInfo = response.data.coord.lat;
+    //console.log(response.data.coord.lon);
+    //console.log(response.data.coord.lat);
     const {weather,main } = response.data;
     const iconUrl = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`;
    currentWeather.innerHTML = ` ${Math.round(
      main.temp
    )}<sup>°C</sup>`;
    cuurentWeatherIcon.src = iconUrl;
-   
+
+    // Weather forecast daily
+  //  const forecast = await axios.get(
+  //    `https://api.openweathermap.org/data/2.5/onecall?lat=${latInfo}&lon=${lonInfo}&exclude=daily&appid=${apikey}&units=${weatherType}`
+  //  );
+  //  console.log(forecast.data.hourly); 
 }
+
+//Convert a Unix timestamp to time in JavaScript
+// var s = new Date(1637780400000).toLocaleDateString("en-FI");
+// console.log(s);

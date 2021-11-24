@@ -46,7 +46,8 @@ const getWeatherDataFromApi = async () => {
         return;
       }
     }
-    console.log(weather[0].icon);
+
+    console.log(main);
 
     const iconUrl = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0].icon}.svg`;
     console.log(iconUrl);
@@ -62,7 +63,32 @@ const getWeatherDataFromApi = async () => {
     <figure>
         <img class="city-icon" src="${iconUrl}">
         <figcaption>${weather[0].description}</figcaption>
-    </figure>`;
+    </figure> <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#${name}">
+  More Info
+</button> <div class="modal fade" id="${name}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">${name}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <span>Feels Like : </span>${Math.round(
+          main.feels_like
+        )}<sup>°C</sup> <br>
+        <span>Pressure :</span> ${main.pressure} hPa <br>
+        <span>Humidty :</span>  ${main.humidity} % <br>
+        <span>Tempreture Min : </span>${Math.round(
+          main.temp_min
+        )}<sup>°C</sup> <br>
+        <span>Tempreture Max :</span>${Math.round(main.temp_max)}<sup>°C</sup>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>`;
+
 
     createdCityCardLi.innerHTML = createdCityCardLiInnerH;
     list.appendChild(createdCityCardLi);
