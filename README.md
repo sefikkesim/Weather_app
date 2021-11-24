@@ -8,13 +8,15 @@
 
 #User story;
 
--When page loaded app shows current location (city/country) and weather.
+-When page loaded app shows current location (city/country) ,weather and time.
 
 -User can search city around the world.
 
 -The app can fetch api with the searched city name(... and apikey if it is obligatory).
 
 -User can display weather data of searched city in weather card.
+
+-User can display more information of searched city with "More Info" button.
 
 -User can display list of searched city weather data card like on gif.
 
