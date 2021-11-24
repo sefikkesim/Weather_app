@@ -1,4 +1,4 @@
-# Weather_app
+# Weather App
 
 
 ![Weather App](https://user-images.githubusercontent.com/91076807/143198161-f16645db-0d10-45de-bc47-73af513f3ebd.gif)
